@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 
   #create
   def create
-    @post = Post.create(post_params)
+    @post = Post.create!(post_params)
     redirect_to post_path(@post)
   end
 
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     #update
     def update
       @post = Post.find(params[:id])
-      @post.update(artist_params)
+      @post.update(post_params)
       redirect_to post_path(@post)
     end
 
@@ -48,9 +48,9 @@ class PostsController < ApplicationController
     #require method ensure that a specific parameter is present
     #permit method returns a copy of the parameters object, returning only the permitted keys and values
     #encapsulate artist_params in a private method so that it will only be available to thie particular class so that it won't work outside the scope of the controller
-    # private
-    # def [post_params]
-    #   params.require(:post).permit(:author, :title, :body)
-    # end
+     private
+     def post_params
+       params.require(:post).permit(:author, :title, :body)
+     end
 
 end #of class

@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+skip_before_action :authenticate_user!, only: [:new, :create]
+
   #Rails uses implicit rendering
   #In Rails we generally use redirect for request on forms
 
@@ -17,6 +19,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.create!(post_params)
     redirect_to post_path(@post)
+    # if @post.save
+    #   redirect_to "/posts/#{@post.id}"
+    # else
+    #   redirect_to "/posts/new" end
   end
 
   #show

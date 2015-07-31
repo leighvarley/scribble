@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+@import url(http://fonts.googleapis.com/css?family=Cinzel:400,700,900);
+body {
+  background: #C7D0D5
+}
+h1 {
+  font-size: 28;
+  font-family: 'Cinzel', serif;
+  color: #EC583A
+}
+h2 {
+  font-size: 20;
+  font-family: 'Cinzel', serif;
+  color: #FF7148
+}
+h3 {
+  font-size: 18;
+  font-family: 'Cinzel', serif;
+  color: #FF7148
+}
+h4 {
+  font-size: 16;
+  font-family: 'Cinzel', serif;
+  color: #FF7148
+}
+p {
+  font-size: 12;
+  font-family: 'Cinzel', serif;
+  color: #696969
+}

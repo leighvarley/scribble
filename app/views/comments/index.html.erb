@@ -1,9 +1,5 @@
 <h2>Comments</h2>
-<p>"great!"</p>
-<ul>
+
   <% @comments.each do |comment| %>
-  <li>
-    <% link_to "#{comment.content}", post_comment_path(post.comment, comment) %>
-  </li>
+    <p><%= comment.content %><p>
   <% end %>
-</ul>

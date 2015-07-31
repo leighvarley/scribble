@@ -17,8 +17,11 @@ ActiveRecord::Schema.define(version: 20150730040626) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.string "content"
+    t.string  "content"
+    t.integer "post_id"
   end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string "author"
@@ -44,4 +47,5 @@ ActiveRecord::Schema.define(version: 20150730040626) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comments", "posts"
 end

@@ -4,9 +4,10 @@
   <% f.label :content %>
   <% f.text_field :content %>
 
-  <% f.submit %>
+  <%= f.submit "Leave your comment!" %>
+
 <% end %>
 
-<%= form_for @comment, method: :delete do |f| %>
-  <% f.submit "Delete!", class: "delete" %>
-<% end %>
+<%#= form_for @comment, method: :delete do |f| %>
+  <%# f.submit "Delete!", class: "delete" %>
+<%# end %>

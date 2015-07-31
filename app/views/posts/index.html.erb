@@ -1,9 +1,11 @@
 <h2>Posts<% link_to "(+)", new_post_path %></h2>
-<ul>
+
   <% @posts.each do |post| %>
-  <li>
-    <%#= link_to "#{post.author}, author %>
-  </li>
+    <h3><%= post.author %></h3>
+    <p><%= post.title %></p>
+    <p><%= post. body %></p>
+    <%= link_to "(edit)", edit_post_path(post) %></h2>
   <% end %>
-</ul>
-<p>test test test</p>
+
+
+<%#= link_to 'Edit post', edit_post_path(@post) %>

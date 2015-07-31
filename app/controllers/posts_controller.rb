@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-skip_before_action :authenticate_user!, only: [:new, :create]
+skip_before_action :authenticate_user!, only: [:index, :show]
 
   #Rails uses implicit rendering
   #In Rails we generally use redirect for request on forms
@@ -28,7 +28,7 @@ skip_before_action :authenticate_user!, only: [:new, :create]
   #show
     def show
       @post = Post.find(params[:id])
-      @comments = @post.comments
+      # @comments = @post.comments
     end
 
     #edit

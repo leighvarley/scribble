@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-skip_before_action :authenticate_user!, only: [:new, :create]
+skip_before_action :authenticate_user!, only: [:index, :show]
 
   #index
   def index
@@ -9,13 +9,13 @@ skip_before_action :authenticate_user!, only: [:new, :create]
 
   #new
   def new
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
     @comment = Comment.new
   end
 
   #create
   def create
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
     @comment = Comment.create!(comment_params.merge(post: @post))
     redirect_to post_comment_path(@post, @comment)
   end

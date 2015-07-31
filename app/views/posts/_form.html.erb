@@ -1,5 +1,16 @@
-<%= form_for @post, link_to: posts_path do |f| %>
-<%#= form_for @post do |f| %>
+<%#=
+Pass the object post into the form builder to indicate that this form is for posts.
+f represents the form builder object.
+The form builder is used to build labels and text fields.
+call submit on the f object to create a submit button for the form.
+the post_path helper points the form to the URI pattern associated with the posts prefix
+  so the form sends a POST request to that route. This is accocaited with the create action in the
+  post controller (see rake routes)
+%>
+
+<%= form_for @post do |f| %>
+<%#= form_for @post, link_to: posts_path do |f| %>
+
   <p>
     <%= f.label :author %><br>
     <%= f.text_field :author %>

@@ -1,18 +1,20 @@
 <h2><%= @post.title %></h2>
 
-<h4><%= @post.author %></h4>
+<h3><%= @post.author %></h3>
 
 <p><%= @post.body %><p>
 
-<%= link_to "(edit)", edit_post_path(@post) %>
+<p><%= link_to "(edit)", edit_post_path(@post) %></p>
 
 <h4>Add a comment <%= link_to "(+)", new_comment_path %></h4>
 
 <ul>
   <% @post.comments.each do |comment| %>
   <li>
-    comment.content
+    <p>comment.content</p>
   </li>
 </ul>
 
 <% end %>
+
+<p><%= link_to 'Back', posts_path %></p>

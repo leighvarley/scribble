@@ -1,11 +1,10 @@
-<h2>Posts<% link_to "(+)", new_post_path %></h2>
+<p><%= link_to 'Add a new post', new_post_path %></p>
+
+<h1>Posts<% link_to "(+)", new_post_path %></h1>
 
   <% @posts.each do |post| %>
+    <h2><%= post.title %></h2>
     <h3><%= post.author %></h3>
-    <p><%= post.title %></p>
     <p><%= post. body %></p>
-    <%= link_to "(edit)", edit_post_path(post) %></h2>
+    <p><%= link_to "(Edit post)", edit_post_path(post) %></p>
   <% end %>
-
-
-<%#= link_to 'Edit post', edit_post_path(@post) %>

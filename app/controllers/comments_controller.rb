@@ -9,25 +9,30 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   #new
   def new
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
     @comment = Comment.new
   end
 
   #create
   def create
-    @post = Post.find(params[:id])
-    @comment = Comment.create!(comment_params.merge(post: @post))
+    @post = Post.find(params[:post_id])
+    # @comment = Comment.create!(comment_params.merge(post: @post))
+    @comment = @post.comments.create!(comment_params)
     redirect_to post_comment_path(@post, @comment)
   end
 
   #show
     def show
       @comment = Comment.find(params[:id])
+      @post = @comment.post
+      # @post = Post.find_by(post_id: @comment.post_id)
+      # @post = Post.find(params[:post_id])
     end
 
     #edit
     def edit
       @comment = Comment.find(params[:id])
+      @post = @comment.post
     end
 
     #update

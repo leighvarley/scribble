@@ -2,8 +2,10 @@
 
 <%= render partial: "form" %>
 
-<%= form_for(@post, method: :delete) do |f| %>
-  <% f.submit "Delete post", class: "delete" %>
-<% end %>
+<%#= form_for @post, method: :delete do |f| %>
+  <%#= f.submit "Delete!", class: "delete" %>
+<%# end %>
 
-  <%#= link_to "Delete post", [post_path(@post), post], method: :delete %>
+<%= link_to "Add a comment", new_post_comment_path(@post, Comment.new, method: :get) %>
+
+  <%= link_to "Delete post", post_path(@post), method: :delete %>

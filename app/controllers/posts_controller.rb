@@ -50,7 +50,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     def destroy
       @post = Post.find(params[:id])
       @post.destroy
-      redirect_to post_path
+      redirect_to posts_path
     end
 
     #Strong parameters - ActionController parameters cannot be used in Active Model mass assignments until they have been whitelisted.

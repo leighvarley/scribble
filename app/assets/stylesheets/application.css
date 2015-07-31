@@ -15,6 +15,7 @@
  */
 @import url(http://fonts.googleapis.com/css?family=Cinzel:400,700,900);
 body {
+  margin: 50px;
   background: #C7D0D5
 }
 h1 {
@@ -23,13 +24,14 @@ h1 {
   color: #EC583A
 }
 h2 {
-  font-size: 16;
+  font-size: 14;
   font-family: 'Cinzel', serif;
   color: #FF7148
 }
 h3 {
   font-size: 14;
   font-family: 'Cinzel', serif;
+  font-weight: bold;
   color: #FF7148
 }
 h4 {
